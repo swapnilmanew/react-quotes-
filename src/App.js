@@ -4,11 +4,13 @@ import './style.css';
 
 export default function App() {
   const [quote, setQuote] = useState([]);
+  const [loader, setLoader] = useState(true);
 
   const getData = async () => {
     const fetchApi = await fetch('https://swquotes.herokuapp.com/random');
     const data = await fetchApi.json();
     setQuote(data[0]);
+    setLoader(false);
   };
 
   const getNewQuote = () => {
@@ -29,8 +31,16 @@ export default function App() {
           <div className="col-12 col-sm-10 col-md-6 m-auto">
             <div className="card p-3 border-0 shadow-lg">
               <div className="card-body">
-                <p className="fs-4">{quote.quote}</p>
-                <p className="text-center text-muted">-{quote.author}</p>
+                {loader ? (
+                  <div class="text-center mb-3">
+                    <div class="spinner-border text-primary" role="status" />
+                  </div>
+                ) : (
+                  <div>
+                    <p className="fs-4">{quote.quote}</p>
+                    <p className="text-center text-muted">-{quote.author}</p>
+                  </div>
+                )}
                 <div className="text-center">
                   <button className="btn btn-primary" onClick={getNewQuote}>
                     New Quote
