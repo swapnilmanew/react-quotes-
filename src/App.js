@@ -30,15 +30,15 @@ export default function App() {
         <div className="row">
           <div className="col-12 col-sm-10 col-md-6 m-auto">
             <div className="card p-3 border-0 shadow-lg">
-              <div className="card-body">
+              <div className="card-body text-center">
                 {loader ? (
-                  <div class="text-center mb-3">
+                  <div class="mb-3">
                     <div class="spinner-border text-primary" role="status" />
                   </div>
                 ) : (
                   <div>
                     <p className="fs-4">{quote.quote}</p>
-                    <p className="text-center text-muted">-{quote.author}</p>
+                    <p className="text-muted">-{quote.author}</p>
                   </div>
                 )}
                 <div className="text-center">
