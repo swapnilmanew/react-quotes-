@@ -1,3 +1,3 @@
-# react-zumsd1
+# Motivational Quotes React App
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-zumsd1)
+App URL - https://motivationalquotesapp.netlify.app/
